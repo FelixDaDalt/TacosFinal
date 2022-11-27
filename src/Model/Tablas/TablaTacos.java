@@ -53,12 +53,7 @@ public class TablaTacos extends AbstractTableModel {
             return;
         }
         this.tacos  = new ArrayList();
-        for (Tacos p:tacos){
-           if(p.getFecha().getDate()==fecha.getDate())
-           {
-               this.tacos.add(p);
-           }
-       }
+        this.tacos = tacos.stream().filter((p)->p.getFecha().getDate()==fecha.getDate()).toList();
     }
     
     public void addTaco(Tacos taco){
@@ -70,34 +65,16 @@ public class TablaTacos extends AbstractTableModel {
        this.tacos = new ArrayList();
        if(fecha==null)
        {
-        for (Tacos p:tacos){
-            if(p.getIdEstado().getId()==id)
-            {
-                this.tacos.add(p);
-            }
-        }
-       return;
+        this.tacos = tacos.stream().filter((p)->p.getIdEstado().getId()==id).toList();
+        return;
        }
        
-       for (Tacos p:tacos){
-           if(p.getFecha().getDate()==fecha.getDate())
-           {
-                if(p.getIdEstado().getId()==id)
-                {
-                    this.tacos.add(p);
-                }
-           }
-       }
+       this.tacos = tacos.stream().filter((p)->p.getFecha().getDate()==fecha.getDate() && p.getIdEstado().getId()==id).toList();
     }
     
    public void setTacosByEstado(List<Tacos> tacos,List<Integer>id){
        this.tacos = new ArrayList();
-       for (Tacos p:tacos){
-           for(int x:id){
-               if(p.getIdEstado().getId()==x)
-                   this.tacos.add(p);
-           }
-       }
+       this.tacos = tacos.stream().filter((p)->p.getIdEstado().getId()==id.iterator().next()).toList();
     }
    
    

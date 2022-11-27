@@ -51,7 +51,7 @@ public class Internal_Ingredientes extends javax.swing.JInternalFrame {
 
             }
         ));
-        jListaSalsas.setGridColor(new java.awt.Color(255, 255, 255));
+        jListaSalsas.setGridColor(new java.awt.Color(0, 0, 0));
         jListaSalsas.setRowSelectionAllowed(false);
         jListaSalsas.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setViewportView(jListaSalsas);

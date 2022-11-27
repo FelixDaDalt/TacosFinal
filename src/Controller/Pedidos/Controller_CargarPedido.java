@@ -275,9 +275,11 @@ public class Controller_CargarPedido implements ActionListener, ListSelectionLis
             
             this.ventanaCargarPedido.jListaTortillas.setSelectedValue(taco.getIdTortilla().getNombre(), true);
             this.ventanaCargarPedido.jListaSalsas.setSelectedValue(taco.getIdSalsa().getNombre(), true);
+            
             this.ventanaCargarPedido.jListaRellenos.setSelectedValue(taco.getIdRelleno1().getNombre(), true);
 
             if(taco.getIdRelleno2()!=null){
+            
             this.ventanaCargarPedido.jListaRellenos.setSelectedValue(taco.getIdRelleno2().getNombre(), true);
                 if(taco.getIdRelleno3()!=null){
                 this.ventanaCargarPedido.jListaRellenos.setSelectedValue(taco.getIdRelleno3().getNombre(), true);
