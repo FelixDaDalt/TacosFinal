@@ -5,7 +5,6 @@
 package Model.Listas;
 
 import Model.Relleno;
-import Repositorio.RepositorioRelleno;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.AbstractListModel;
@@ -35,6 +34,10 @@ public class ListaRellenos extends AbstractListModel{
                this.rellenos.add(p);
            }
         }
+    }
+    
+    public int findRellenoIndex(Relleno relleno){
+       return this.rellenos.indexOf(relleno);
     }
     
     @Override

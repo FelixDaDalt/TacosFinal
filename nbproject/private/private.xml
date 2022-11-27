@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Controller_Cocina.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Model/Tacos.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/View/Internal/Internal_Tortilla.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Model/Tortilla.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/build.xml</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Controller_Salsa.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/tacosfinal/Program.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/View/Internal/Pedidos/Internal_Cargar.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Controller_Ingredientes.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Model/Listas/ListaSalsas.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/View/Internal/Internal_Relleno.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Model/Listas/ListaRellenos.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Controller_Login.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Pedidos/Controller_CocinaPedido.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Controller_Empleado.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Controller_Encargado.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/View/Encargado.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Model/Tablas/TablaTortilla.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Model/Estados.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Pedidos/Controller_CargarPedido.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Servicio/ServicioTortilla.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Model/Tablas/TablaTacos.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Repositorio/RepositorioRelleno.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/View/Empleado.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/View/Cocina.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/View/Internal/Internal_Ingredientes.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Repositorio/RepositorioTacos.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Repositorio/RepositorioEstados.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/View/Login.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Model/Relleno.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Model/Salsa.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Controller_Tortilla.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/Controller/Controller_Relleno.java</file>
+            <file>file:/C:/Users/trabajo/Documents/NetBeansProjects/TacosFinal/src/View/Internal/Pedidos/Internal_Cocina.java</file>
+        </group>
+    </open-files>
+</project-private>

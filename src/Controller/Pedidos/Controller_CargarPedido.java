@@ -18,6 +18,8 @@ import Repositorio.RepositorioTortilla;
 import View.Internal.Pedidos.Internal_Cargar;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.event.ListSelectionEvent;
@@ -151,23 +153,23 @@ public class Controller_CargarPedido implements ActionListener, ListSelectionLis
             int[] rellenosIndex = ventanaCargarPedido.jListaRellenos.getSelectedIndices(); //Almaceno los indices de la lista de rellenos
                 // seteo los rellenos
             switch(rellenosSeleccionados){
-                        case 1:
+                        case 1 -> {
                             this.taco.setIdRelleno1(this.listaRellenos.getRelleno(rellenosIndex[0]));
                             this.taco.setIdRelleno2(null);
                             this.taco.setIdRelleno3(null);
-                            break;
-                        case 2:
+                }
+                        case 2 -> {
                             this.taco.setIdRelleno1(this.listaRellenos.getRelleno(rellenosIndex[0]));
                             this.taco.setIdRelleno2(this.listaRellenos.getRelleno(rellenosIndex[1]));
                             this.taco.setIdRelleno3(null);
-                            break;
-                        case 3:
+                }
+                        case 3 -> {
                             this.taco.setIdRelleno1(this.listaRellenos.getRelleno(rellenosIndex[0]));
                             this.taco.setIdRelleno2(this.listaRellenos.getRelleno(rellenosIndex[1]));
                             this.taco.setIdRelleno3(this.listaRellenos.getRelleno(rellenosIndex[2]));
-                            break;
-                        default:
-                            break;
+                }
+                        default -> {
+                }
                 }
 
                 // seteo la fecha
@@ -276,15 +278,18 @@ public class Controller_CargarPedido implements ActionListener, ListSelectionLis
             this.ventanaCargarPedido.jListaTortillas.setSelectedValue(taco.getIdTortilla().getNombre(), true);
             this.ventanaCargarPedido.jListaSalsas.setSelectedValue(taco.getIdSalsa().getNombre(), true);
             
-            this.ventanaCargarPedido.jListaRellenos.setSelectedValue(taco.getIdRelleno1().getNombre(), true);
-
-            if(taco.getIdRelleno2()!=null){
+            List<Integer> indices = new ArrayList<Integer>();
+            indices.add(this.listaRellenos.findRellenoIndex(taco.getIdRelleno1()));
             
-            this.ventanaCargarPedido.jListaRellenos.setSelectedValue(taco.getIdRelleno2().getNombre(), true);
-                if(taco.getIdRelleno3()!=null){
-                this.ventanaCargarPedido.jListaRellenos.setSelectedValue(taco.getIdRelleno3().getNombre(), true);
-                }
+            if(taco.getIdRelleno2()!=null){
+                indices.add(this.listaRellenos.findRellenoIndex(taco.getIdRelleno2()));
+                    if(taco.getIdRelleno3()!=null){
+                    indices.add(this.listaRellenos.findRellenoIndex(taco.getIdRelleno3()));
+                    }
+             
             }
+            int[] arr = indices.stream().mapToInt(i -> i).toArray();
+            this.ventanaCargarPedido.jListaRellenos.setSelectedIndices(arr);
         }else{
             this.ventanaCargarPedido.jEliminarPedido.setEnabled(false);
             this.ventanaCargarPedido.jUpdate.setEnabled(false);
