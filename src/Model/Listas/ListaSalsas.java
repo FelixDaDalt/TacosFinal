@@ -29,7 +29,7 @@ public class ListaSalsas extends AbstractListModel{
     
     public void setSalsasDisponibles(List<Salsa> salsas){ 
        this.salsas = new ArrayList();
-       this.salsas.stream().filter((p)->p.getDisponible()==true);
+       this.salsas = salsas.stream().filter((p)->p.getDisponible()==true).toList();
     }
     
     @Override

@@ -30,7 +30,7 @@ public class ListaTortillas extends AbstractListModel{
     
     public void setTortillasDisponibles(List<Tortilla> tortillas){ 
        this.tortillas = new ArrayList();
-       this.tortillas.stream().filter((p)->p.getDisponible()==true);
+       this.tortillas = tortillas.stream().filter((p)->p.getDisponible()==true).toList();
     }
     
     @Override
