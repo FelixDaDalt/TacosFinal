@@ -5,7 +5,6 @@
 package Model.Listas;
 
 import Model.Tortilla;
-import Repositorio.RepositorioTortilla;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.AbstractListModel;
@@ -31,12 +30,7 @@ public class ListaTortillas extends AbstractListModel{
     
     public void setTortillasDisponibles(List<Tortilla> tortillas){ 
        this.tortillas = new ArrayList();
-       for (Tortilla p:tortillas){
-           if(p.getDisponible()==true)
-           {
-               this.tortillas.add(p);
-           }
-        }
+       this.tortillas.stream().filter((p)->p.getDisponible()==true);
     }
     
     @Override

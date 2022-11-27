@@ -28,12 +28,7 @@ public class ListaRellenos extends AbstractListModel{
     
     public void setRellenosDisponibles(List<Relleno> rellenos){ 
        this.rellenos = new ArrayList();
-       for (Relleno p:rellenos){
-           if(p.getDisponible()==true)
-           {
-               this.rellenos.add(p);
-           }
-        }
+       this.rellenos.stream().filter((p)->p.getDisponible()==true);
     }
     
     public int findRellenoIndex(Relleno relleno){
