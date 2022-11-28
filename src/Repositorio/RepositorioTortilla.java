@@ -31,7 +31,7 @@ public class RepositorioTortilla {
       
     public <Tortilla>List getAll(){
          this.tortillas = servicioTortilla.getAll(); // se lo asigno a la lista
-         return this.tortillas; // retorno la lista
+         return this.tortillas.stream().filter((p)->p.getisDelete()==0).toList(); // retorno la lista
     }
     
     public boolean Guardar(Tortilla tortilla){

@@ -37,11 +37,6 @@ public class TablaSalsa extends AbstractTableModel {
         this.salsas.add(salsa);
     }
     
-    public void updateSalsas(List<Salsa> salsas){
-        this.salsas.clear();
-        setSalsas(salsas);
-    }
-    
     @Override
     public String getColumnName(int columna){
         return tituloColumna[columna];

@@ -50,7 +50,10 @@ public class Salsa implements Serializable {
     @Basic(optional = false)
     @Column(name = "disponible")
     private boolean disponible;
-
+    @Basic(optional = false)
+    @Column(name = "isDelete")
+    private int isDelete;
+    
     public Salsa() {
     }
 
@@ -98,6 +101,13 @@ public class Salsa implements Serializable {
         this.disponible = disponible;
     }
 
+     public void setisDelete(int isDelete) {
+        this.isDelete = isDelete;
+    }
+    
+    public int getisDelete() {
+        return this.isDelete;
+    }
     @Override
     public int hashCode() {
         int hash = 0;

@@ -96,22 +96,29 @@ public class Controller_Salsa implements ActionListener,ListSelectionListener {
             this.salsa.setPicor(this.ventanaCargaSalsa.jPicor.getValue());
             this.salsa.setDisponible(this.ventanaCargaSalsa.jDisponibilidad.getValue()!=0);
             if(repo.Guardar(this.salsa)){
-                this.lista.updateSalsas(repo.getAll());
+                this.lista.setSalsas(repo.getAll());
                 this.ventanaCargaSalsa.jListaSalsas.updateUI();
             }         
         }
     }
     
     private void eliminarSalsa(){
-        if(repo.Eliminar(this.salsa)){
-            this.lista.updateSalsas(repo.getAll());
-            this.ventanaCargaSalsa.jListaSalsas.updateUI(); 
-            this.salsa = new Salsa();
-            this.ventanaCargaSalsa.jListaSalsas.clearSelection();
-            this.ventanaCargaSalsa.jUpdate.setEnabled(false);
-            this.ventanaCargaSalsa.jDelete.setEnabled(false);
+        
+        int result = JOptionPane.showConfirmDialog(null, "¿Realmente desea eliminar "+this.salsa.getNombre()+"?\n\n(Esta opcion no puede ser revertida)",
+                "Eliminar Salsa", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if(result == JOptionPane.YES_OPTION)
+        {
+            if(repo.Eliminar(this.salsa)){
+                this.lista.setSalsas(repo.getAll());
+                this.ventanaCargaSalsa.jListaSalsas.updateUI(); 
+                this.salsa = new Salsa();
+                this.ventanaCargaSalsa.jListaSalsas.clearSelection();
+                this.ventanaCargaSalsa.jUpdate.setEnabled(false);
+                this.ventanaCargaSalsa.jDelete.setEnabled(false);
 
-        }            
+            }
+        } 
     }
 
     private void nuevaSalsa(){

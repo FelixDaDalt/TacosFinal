@@ -72,7 +72,7 @@ public class ServicioTortilla {
            }
         
         Tortilla buscar = Search(tortilla);
-        em.remove(buscar);
+        buscar.setisDelete(1);
         em.getTransaction().commit();
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,e);

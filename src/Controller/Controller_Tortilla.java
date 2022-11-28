@@ -94,21 +94,27 @@ public class Controller_Tortilla implements ActionListener,ListSelectionListener
             this.tortilla.setDescripcion(ventanaCargaTortilla.jDescripcion.getText());
             this.tortilla.setDisponible(ventanaCargaTortilla.jDisponibilidad.getValue()!=0);
             if(repo.Guardar(this.tortilla)){
-                this.tabla.updateTortillas(repo.getAll());
+                this.tabla.setTortillas(repo.getAll());
                 this.ventanaCargaTortilla.jListaTortillas.updateUI();
             }         
         }
     }
     
     private void eliminarTortilla(){
-        if(repo.Eliminar(this.tortilla)){
-            this.tabla.updateTortillas(repo.getAll());
-            this.ventanaCargaTortilla.jListaTortillas.updateUI(); 
-            this.tortilla = new Tortilla();
-            this.ventanaCargaTortilla.jListaTortillas.clearSelection();
-            this.ventanaCargaTortilla.jUpdate.setEnabled(false);
-            this.ventanaCargaTortilla.jDelete.setEnabled(false);
+         int result = JOptionPane.showConfirmDialog(null, "¿Realmente desea eliminar "+this.tortilla.getNombre()+"?\n\n(Esta opcion no puede ser revertida)",
+                "Eliminar Tortilla", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if(result == JOptionPane.YES_OPTION)
+        {
+            if(repo.Eliminar(this.tortilla)){
+                this.tabla.setTortillas(repo.getAll());
+                this.ventanaCargaTortilla.jListaTortillas.updateUI(); 
+                this.tortilla = new Tortilla();
+                this.ventanaCargaTortilla.jListaTortillas.clearSelection();
+                this.ventanaCargaTortilla.jUpdate.setEnabled(false);
+                this.ventanaCargaTortilla.jDelete.setEnabled(false);
 
+            }
         }            
     }
 

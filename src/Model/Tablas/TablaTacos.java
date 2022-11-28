@@ -75,7 +75,8 @@ public class TablaTacos extends AbstractTableModel {
    public void setTacosByEstado(List<Tacos> tacos,List<Integer>id){
        this.tacos = new ArrayList();
        this.tacos = tacos.stream().filter((p)->p.getIdEstado().getId()==id.iterator().next()).toList();
-    }
+       
+   }
    
    
     @Override

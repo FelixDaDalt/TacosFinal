@@ -46,7 +46,10 @@ public class Tortilla implements Serializable {
     @Basic(optional = false)
     @Column(name = "disponible")
     private boolean disponible;
-
+    @Basic(optional = false)
+    @Column(name = "isDelete")
+    private int isDelete;
+    
     public Tortilla() {
     }
 
@@ -83,7 +86,14 @@ public class Tortilla implements Serializable {
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
-
+    
+    public void setisDelete(int isDelete) {
+        this.isDelete = isDelete;
+    }
+    
+    public int getisDelete() {
+        return this.isDelete;
+    }
 
     @Override
     public int hashCode() {

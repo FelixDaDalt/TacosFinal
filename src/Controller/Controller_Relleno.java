@@ -102,14 +102,20 @@ public class Controller_Relleno implements ActionListener,ListSelectionListener 
     }
     
     private void eliminarRelleno(){
-        if(repo.Eliminar(this.relleno)){
-            this.lista.setRellenos(repo.getAll());
-            this.ventanaCargaRelleno.jListaRellenos.updateUI(); 
-            this.relleno = new Relleno();
-            this.ventanaCargaRelleno.jListaRellenos.clearSelection(); 
-            this.ventanaCargaRelleno.jDelete.setEnabled(false);
-            this.ventanaCargaRelleno.jUpdate.setEnabled(false);
-        }            
+        int result = JOptionPane.showConfirmDialog(null, "¿Realmente desea eliminar "+this.relleno.getNombre()+"\n\n(Esta opcion no puede ser revertida)",
+                "Eliminar relleno", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if(result == JOptionPane.YES_OPTION)
+        {
+            if(repo.Eliminar(this.relleno)){
+                this.lista.setRellenos(repo.getAll());
+                this.ventanaCargaRelleno.jListaRellenos.updateUI(); 
+                this.relleno = new Relleno();
+                this.ventanaCargaRelleno.jListaRellenos.clearSelection(); 
+                this.ventanaCargaRelleno.jDelete.setEnabled(false);
+                this.ventanaCargaRelleno.jUpdate.setEnabled(false);
+            }   
+        }
     }
 
     private void nuevoRelleno(){

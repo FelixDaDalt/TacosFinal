@@ -72,7 +72,7 @@ public class ServicioRelleno {
            }
         
         Relleno buscar = Search(relleno);
-        em.remove(buscar);
+        buscar.setisDelete(1);
         em.getTransaction().commit();
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,e);

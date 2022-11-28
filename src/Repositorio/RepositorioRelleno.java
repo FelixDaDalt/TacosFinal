@@ -29,7 +29,7 @@ public class RepositorioRelleno {
       
     public <Relleno>List getAll(){
          this.rellenos = servicioRelleno.getAll(); // se lo asigno a la lista
-         return this.rellenos; // retorno la lista
+         return this.rellenos.stream().filter((p)->p.getisDelete()==0).toList(); // retorno la lista
     }
     
     public boolean Guardar(Relleno relleno){

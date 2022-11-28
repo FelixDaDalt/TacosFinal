@@ -28,7 +28,7 @@ public class RepositorioSalsa {
       
     public <Salsa>List getAll(){
          this.salsas = servicioSalsa.getAll(); // se lo asigno a la lista
-         return this.salsas; // retorno la lista
+         return this.salsas.stream().filter((p)->p.getisDelete()==0).toList(); // retorno la lista
     }
     
     public boolean Guardar(Salsa salsa){

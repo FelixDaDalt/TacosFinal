@@ -114,19 +114,35 @@ public class Controller_CargarPedido implements ActionListener, ListSelectionLis
     }
         
     if (evento.getSource() == this.ventanaCargarPedido.jcargarPedido)
-    { 
-        nuevoPedido();
+    {  int result = JOptionPane.showConfirmDialog(null, "¿Realizar el pedido?",
+                "Confirmacion de pedido", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if(result == JOptionPane.YES_OPTION)
+        {
+            nuevoPedido();
+        }
     }
     
     if (evento.getSource() == this.ventanaCargarPedido.jEliminarPedido)
     {
+         int result = JOptionPane.showConfirmDialog(null, "¿Desea eliminar el pedido?",
+                "Eliminar pedido", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if(result == JOptionPane.YES_OPTION)
+        {
         eliminarPedido();
-    
+        }
     }
     
     if (evento.getSource() == this.ventanaCargarPedido.jUpdate)
     {
-        guardarPedido();
+         int result = JOptionPane.showConfirmDialog(null, "¿Desea modificar el pedido?",
+                "Modificar pedido", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if(result == JOptionPane.YES_OPTION)
+        {
+            guardarPedido();
+        }
     
     }
     

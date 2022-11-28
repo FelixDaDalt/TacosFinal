@@ -98,7 +98,13 @@ public class Controller_CocinaPedido implements ActionListener, ListSelectionLis
     
     if (evento.getSource() == this.ventanaCocina.jUpdateCocina)
     {
-        guardarPedido();
+         int result = JOptionPane.showConfirmDialog(null, "¿Modificar el estado?",
+                "Confirmacion de estado", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if(result == JOptionPane.YES_OPTION)
+        {
+            guardarPedido();
+        }
     
     }
     
@@ -108,22 +114,24 @@ public class Controller_CocinaPedido implements ActionListener, ListSelectionLis
     }   
 
     public void guardarPedido(){
-        if(this.taco!= null)
-        {
-                // seteo la fecha
-                long millis=System.currentTimeMillis(); 
-                java.sql.Date date = new java.sql.Date(millis);
-                this.taco.setFecha(date);
+        
+            if(this.taco!= null)
+            {
+                    // seteo la fecha
+                    long millis=System.currentTimeMillis(); 
+                    java.sql.Date date = new java.sql.Date(millis);
+                    this.taco.setFecha(date);
 
-                // seteo el estado
-                this.estado = this.reposEstados.getById(this.ventanaCocina.jEstado.getValue());
-                this.taco.setIdEstado(this.estado);
-                // Guardo el taco
-                if(this.repo.Guardar(this.taco)){
-                    updateVistaPedidos();
+                    // seteo el estado
+                    this.estado = this.reposEstados.getById(this.ventanaCocina.jEstado.getValue());
+                    this.taco.setIdEstado(this.estado);
+                    // Guardo el taco
+                    if(this.repo.Guardar(this.taco)){
+                        updateVistaPedidos();
 
-                }
-        }
+                    }
+            }
+        
     }
         
     public void detallePedido(){
